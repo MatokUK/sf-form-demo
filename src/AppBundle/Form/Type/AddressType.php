@@ -23,7 +23,7 @@ class AddressType extends AbstractType
         $builder->add('number', TextType::class, array('required' => false));
         $builder->add('country', ChoiceType::class, array(
             'required' => false,
-            'choices' => $this->countryRepository->getCountries(),
+            'choices' => array_flip($this->countryRepository->getCountries()),
             ));
     }
 
@@ -35,8 +35,8 @@ class AddressType extends AbstractType
         );
     }
 
-   /* public function getName()
+    public function getBlockPrefix()
     {
         return 'my_nice_address';
-    }*/
+    }
 }

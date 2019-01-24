@@ -11,6 +11,10 @@
                 <option name="min">4</option>
             </constraint>
         </property>
+
+        <property name="address">
+            <constraint name="Valid" />
+        </property>
     </class>
 
     <class name="AppBundle\Form\Entity\Address">
