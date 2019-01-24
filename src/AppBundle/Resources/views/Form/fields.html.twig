@@ -1,0 +1,7 @@
+{% block my_nice_address_widget %}
+    <div style="border: 0px solid black">
+    {{ form_label(form.street)}} {{ form_widget(form.street)}} (name)  // {{ form_widget(form.number)}} (number)
+    </div>
+
+    {{ form_row(form.country)}}
+{% endblock %}
