@@ -19,9 +19,9 @@ class AddressType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('street', new TextType(), array('required' => false));
-        $builder->add('number', new TextType(), array('required' => false));
-        $builder->add('country', new ChoiceType(), array(
+        $builder->add('street', TextType::class, array('required' => false));
+        $builder->add('number', TextType::class, array('required' => false));
+        $builder->add('country', ChoiceType::class, array(
             'required' => false,
             'choices' => $this->countryRepository->getCountries(),
             ));
@@ -35,8 +35,8 @@ class AddressType extends AbstractType
         );
     }
 
-    public function getName()
+   /* public function getName()
     {
         return 'my_nice_address';
-    }
+    }*/
 }
