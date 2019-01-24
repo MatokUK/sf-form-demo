@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Form\Type\OrderType;
+use AppBundle\Repository\CountryRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,5 +28,16 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
             'form' => $form->createView(),
         ));
+    }
+
+
+    /**
+     * @Route("/autowire", name="autowire")
+     */
+    public function autowireAction(CountryRepository $countryRepository)
+    {
+        $countries = $countryRepository->getCountries();
+        dump($countries);
+        exit;
     }
 }

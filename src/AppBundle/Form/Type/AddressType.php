@@ -2,6 +2,7 @@
 namespace AppBundle\Form\Type;
 
 use AppBundle\Form\Entity\Address;
+use AppBundle\Repository\CountryRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -12,7 +13,7 @@ class AddressType extends AbstractType
 {
     private $countryRepository;
 
-    public function __construct($countryRepository)
+    public function __construct(CountryRepository $countryRepository)
     {
         $this->countryRepository = $countryRepository;
     }
